@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Kodune Ülesanne</title>
+	<style type="text/css">
+	.active { background: skyblue; padding: 10px;}
+	</style>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript"></script>
+</head>
+
+<body>
+
+<button id="next">edasi</button>
+<button id="prev">tagasi</button>
+
+<div class ="j2rjest">
+	<ul class="list">
+		<li>esimene</li>
+		<li>teine</li>
+		<li>kolmas</li>
+		<li>neljas</li>
+	</ul>
+</div>
+
+<script>
+
+$("#next").on("click", function(){
+var next = $(this).next("li");
+
+if(next){
+	$(".active").removeClass("active");
+	}
+	else{
+		}
+	});
+</script>
+
+<!--
+<script>
+$(".j2rjest li:first").addClass("active");
+
+var item = $("ul.list").on("click", function(){
+	var target = $(this);
+	if (!target.hasClass("active")){
+		$(this).addClass("active").siblings(".active").removeClass("active");
+		}
+	});
+</script>
+-->
+
+<!--
+<script> 
+var items = $(".list");
+$(".list li:first").addClass("active");
+var currentItem = items.filter('.active');
+$('#next').on('click', function() {
+    var nextItem = currentItem.next();
+    currentItem.removeClass('active');
+    if ( nextItem.length ) {
+        currentItem = nextItem.addClass('active');
+    } else {
+        // If you want it to loop around
+        currentItem = items.first().addClass('active');
+    }
+});
+</script>
+-->
+</body>
+</html>
